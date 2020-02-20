@@ -1,0 +1,22 @@
+version: '3'
+services:
+  go_app:
+    build: 
+      context: ./go
+      dockerfile: Dockerfile
+    restart: always
+  java_app:
+    build: 
+      context: ./java
+      dockerfile: Dockerfile
+    restart: always
+  load_balancer:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    links:
+    - go_app
+    - java_app
+    ports:
+    - "8080:8080"
+
