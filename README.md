@@ -12,6 +12,6 @@ Notes:
 
 Testing: Open another terminal and execute below command,
 
-# ab -n 20 -c 10 http://localhost:8080/hotels
+$ ab -n 20 -c 10 http://localhost:8080/hotels
 
 Now check cosole output in application running terminal.
